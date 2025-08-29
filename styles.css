@@ -1,0 +1,72 @@
+/* 🎨 Base Colors */
+:root {
+  --lavender: #c7aefc;
+  --lavender-light: #ede7f6;
+  --pink: #f8bbd0;
+  --white: #fff;
+  --text-dark: #3d3d3d;
+}
+
+/* Reset & Typography */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, var(--lavender-light), var(--lavender));
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  padding: 2rem;
+  text-align: center;
+}
+
+.header {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--lavender);
+  margin-bottom: 1rem;
+}
+
+.message-box {
+  min-height: 150px;
+  background: var(--lavender-light);
+  border-radius: 15px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: inset 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.btn {
+  background: var(--lavender);
+  color: var(--white);
+  border: none;
+  border-radius: 30px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--pink);
+}
+
+footer {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
