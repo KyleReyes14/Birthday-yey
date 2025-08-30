@@ -1,4 +1,3 @@
-/* 🎨 Base Colors */
 :root {
   --lavender: #c7aefc;
   --lavender-light: #ede7f6;
@@ -7,7 +6,6 @@
   --text-dark: #3d3d3d;
 }
 
-/* Reset & Typography */
 body, html {
   margin: 0;
   padding: 0;
@@ -30,6 +28,7 @@ body, html {
   text-align: center;
 }
 
+/* Header */
 .header {
   font-size: 2rem;
   font-weight: bold;
@@ -37,6 +36,15 @@ body, html {
   margin-bottom: 1rem;
 }
 
+/* Intro text */
+.intro-text {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/* Message box */
 .message-box {
   min-height: 150px;
   background: var(--lavender-light);
@@ -48,8 +56,11 @@ body, html {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
   box-shadow: inset 0 4px 10px rgba(0,0,0,0.05);
+  font-weight: 500;
+  color: #333;
 }
 
+/* Button */
 .btn {
   background: var(--lavender);
   color: var(--white);
@@ -58,15 +69,82 @@ body, html {
   padding: 0.75rem 2rem;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .btn:hover {
   background: var(--pink);
+  transform: translateY(-2px);
 }
 
-footer {
-  margin-top: 1rem;
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Photo section */
+.photo-section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.photo-placeholder {
+  font-style: italic;
+  color: #777;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 0.75rem;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Click counter section */
+.count-section {
+  margin: 2rem 0;
+}
+
+.count-placeholder {
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: var(--lavender-light);
+  padding: 0.75rem;
+  border-radius: 12px;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.count-text span {
+  font-weight: bold;
+  color: var(--lavender);
+}
+
+.count-hint-section {
+  margin-top: 0.5rem;
+}
+
+.count-hint {
   font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Finale (hidden until triggered) */
+.finale {
+  margin-top: 2rem;
+  background: var(--lavender-light);
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: none; /* Will show later with JS */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.finale-text {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--lavender);
+}
+
+/* Footer */
+footer {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
   color: #666;
 }
