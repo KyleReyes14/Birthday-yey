@@ -1,55 +1,88 @@
+// 💬 Your 100 messages
 const messages = [
-  "You make me smile every day 💕",
-  "Our first date still makes me laugh 😂",
-  "I love how you always support my crazy ideas 🌸",
-  "Final message before the big surprise 🎉"
+  "Message 1",
+  "Message 2",
 ];
 
+// 📸 Your 100 image paths (match index with messages)
+const images = [
+  "./selected-img/IMG20240819141632.jpg",
+  "./selected-img/83018072_2794905450531392_3413475531088199680_n.jpg",
+];
+
+// Select elements
 const btn = document.querySelector(".btn");
 const messageBox = document.getElementById("random-msg");
 const clickCountEl = document.getElementById("click-count");
+const collage = document.createElement("div"); // collage container
+collage.classList.add("collage");
+document.body.appendChild(collage);
+
+const photoPlaceholder = document.querySelector(".photo-placeholder");
 const finaleSection = document.querySelector(".finale");
 const finaleText = document.querySelector(".finale-text");
-const photoPlaceholder = document.querySelector(".photo-placeholder");
 
 let clickCount = 0;
 
-// 🎊 Handle button click
+// Handle button click
 btn.addEventListener("click", () => {
-  clickCount++;
-  clickCountEl.textContent = clickCount;
+  if (clickCount < messages.length) {
+    // Show current message
+    messageBox.textContent = messages[clickCount];
 
-  // Show message if within array range
-  if (clickCount <= messages.length) {
-    messageBox.textContent = messages[clickCount - 1];
+    // Show current photo as main photo
+    showMainPhoto(images[clickCount]);
+
+    // If this isn’t the first click, move the previous photo into the collage
+    if (clickCount > 0) {
+      addImageToCollage(images[clickCount - 1]);
+    }
+
+    clickCount++;
+    clickCountEl.textContent = clickCount;
   }
 
-  // 🎯 Milestone placeholder (example at 25, 50, 75 clicks)
-  if ([10, 20, 30, 40, 50, 60, 70, 80, 90, 95].includes(clickCount)) {
-    photoPlaceholder.textContent = `📸 Special memory unlocked at ${clickCount} clicks! (replace with photo)`;
-  }
-
-  // 🎉 Finale when count reaches 100
-  if (clickCount === 100) {
+  // 🎉 Finale when finished
+  if (clickCount === messages.length) {
     triggerFinale();
   }
 });
 
-// 🎉 Finale function
+// 🎯 Show current main photo
+function showMainPhoto(src) {
+  photoPlaceholder.innerHTML = ""; // clear previous
+  const img = document.createElement("img");
+  img.src = src;
+  photoPlaceholder.appendChild(img);
+}
+
+// 🖼️ Move old photo into collage
+function addImageToCollage(src) {
+  const img = document.createElement("img");
+  img.src = src;
+  img.classList.add("collage-img");
+
+  // Random placement
+  img.style.top = Math.random() * 90 + "%";
+  img.style.left = Math.random() * 90 + "%";
+  img.style.transform = `rotate(${Math.random() * 30 - 15}deg)`;
+
+  collage.appendChild(img);
+}
+
+// Finale function
 function triggerFinale() {
-  // Hide generator
   btn.style.display = "none";
   messageBox.style.display = "none";
 
-  // Show finale
   finaleSection.style.display = "block";
-  finaleText.textContent = "🎊 Happy Birthday, My Love! 🎊\nThank you for being my everything 💜";
+  finaleText.textContent =
+    "not sure what to write yet"
 
-  // Launch confetti 🎉
   startConfetti();
 }
 
-// 🎊 Confetti effect (basic canvas version)
+// Confetti
 function startConfetti() {
   const confetti = document.createElement("canvas");
   confetti.id = "confetti-canvas";
@@ -68,7 +101,7 @@ function startConfetti() {
       y: Math.random() * confetti.height - confetti.height,
       size: Math.random() * 10 + 5,
       speed: Math.random() * 3 + 2,
-      color: `hsl(${Math.random() * 360}, 70%, 60%)`
+      color: `hsl(${Math.random() * 360}, 70%, 60%)`,
     });
   }
 
