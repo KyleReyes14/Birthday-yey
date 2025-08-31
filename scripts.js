@@ -399,9 +399,12 @@ const slides = [
     message: "I'm way too attached... I love you, Fomodoro Partner!💜",
     image: "./selected-img/Screenshot 2025-08-26 131459.png"
   },
+  {
+    message: "There we gooo! Happy Birthday Lyeeee!! I wanted to buy you all sorts of things todayy but yeyy Glad you liked it! Mwaaa Enjoy your day!🥰",
+    image: "./selected-img/9e28c8be-d920-49fd-b33e-883a7a6ac78e.jpg"
+  }
 ];
 
-// Select elements
 const btn = document.querySelector(".btn");
 const messageBox = document.getElementById("random-msg");
 const clickCountEl = document.getElementById("click-count");
@@ -424,21 +427,19 @@ btn.addEventListener("click", () => {
     messageBox.textContent = currentSlide.message;
     showMainPhoto(currentSlide.image);
 
-    // Move the previous image into the collage
     if (clickCount > 0) {
       addImageToCollage(slides[clickCount - 1].image);
     }
 
     clickCount++;
     clickCountEl.textContent = clickCount;
-  }
-  // Finale
-  if (clickCount > slides.length) {
-    triggerFinale();
+
+    if (clickCount === slides.length) {
+      setTimeout(triggerFinale, 2000);
+    }
   }
 });
 
-// Show current main photo
 function showMainPhoto(src) {
   photoPlaceholder.innerHTML = "";
   const img = document.createElement("img");
@@ -446,7 +447,6 @@ function showMainPhoto(src) {
   photoPlaceholder.appendChild(img);
 }
 
-// Move prev photo into collage
 function addImageToCollage(src) {
   const img = document.createElement("img");
   img.src = src;
@@ -459,17 +459,56 @@ function addImageToCollage(src) {
   collage.appendChild(img);
 }
 
-// Finale function
+//finale func
 function triggerFinale() {
-  btn.style.display = "none";
-  messageBox.style.display = "none";
+  const mainContainer = document.querySelector(".container");
 
-  finaleSection.style.display = "block";
-  finaleText.textContent =
-    "🎊 Happy Birthday, My Love! 🎊\nThank you for being my everything 💜";
+  // Fade out container
+  mainContainer.classList.add("fade-out");
+  setTimeout(() => {
+    mainContainer.style.display = "none";
+  }, 1000);
 
+  // Arrange images into a neat grid
+  setTimeout(() => {
+    const imgs = document.querySelectorAll(".collage-img");
+    const cols = Math.ceil(Math.sqrt(imgs.length));
+    const imgSize = 120;
+    const padding = 20;
+    const startX = (window.innerWidth - (cols * (imgSize + padding))) / 2;
+    const startY = (window.innerHeight - (cols * (imgSize + padding))) / 2;
+
+    imgs.forEach((img, i) => {
+      const row = Math.floor(i / cols);
+      const col = i % cols;
+      const x = startX + col * (imgSize + padding);
+      const y = startY + row * (imgSize + padding);
+
+      img.style.position = "absolute";
+      img.style.width = imgSize + "px";
+      img.style.left = x + "px";
+      img.style.top = y + "px";
+    });
+
+    collage.classList.add("finale-anim"); // enables smooth transitions
+  }, 1200);
+
+  // Start confetti 🎉
   startConfetti();
+  imgs.forEach((img, i) => {
+  const row = Math.floor(i / cols);
+  const col = i % cols;
+  const x = startX + col * (imgSize + padding);
+  const y = startY + row * (imgSize + padding);
+
+  img.style.transition = `all 1.2s cubic-bezier(.25,.8,.25,1) ${i * 50}ms`;
+  img.style.left = x + "px";
+  img.style.top = y + "px";
+  img.style.opacity = 1;
+  img.style.transform = "rotate(0deg) scale(1)";
+});
 }
+
 
 // Confetti
 function startConfetti() {

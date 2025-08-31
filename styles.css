@@ -1,206 +1,242 @@
-    :root {
-      --lavender: #c7aefc;
-      --lavender-light: #ede7f6;
-      --pink: #f8bbd0;
-      --white: #fff;
-      --text-dark: #3d3d3d;
-    }
+:root {
+  --lavender: #c7aefc;
+  --lavender-light: #ede7f6;
+  --pink: #f8bbd0;
+  --white: #fff;
+  --text-dark: #3d3d3d;
+}
 
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, var(--lavender-light), var(--lavender));
-      color: var(--text-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, var(--lavender-light), var(--lavender));
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    .container {
-      width: 90%;
-      max-width: 600px;
-      background: var(--white);
-      border-radius: 20px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-      padding: 2rem;
-      text-align: center;
-      position: relative; /* Added */
-      z-index: 1;        /* Added - ensures it's above the collage */
-    }
+.container {
+  width: 90%;
+  max-width: 600px;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  padding: 2rem;
+  text-align: center;
+  position: relative; /* Added */
+  z-index: 1;        /* Added - ensures it's above the collage */
+}
 
-    /* Header */
-    .header {
-      font-size: 2rem;
-      font-weight: bold;
-      color: var(--lavender);
-      margin-bottom: 1rem;
-    }
+.header {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--lavender);
+  margin-bottom: 1rem;
+}
 
-    /* Intro text */
-    .intro-text {
-      font-size: 1rem;
-      color: #555;
-      margin-bottom: 2rem;
-      line-height: 1.5;
-    }
+.intro-text {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
 
-    /* Message box */
-    .message-box {
-      min-height: 150px;
-      background: var(--lavender-light);
-      border-radius: 15px;
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-      box-shadow: inset 0 4px 10px rgba(0,0,0,0.05);
-      font-weight: 500;
-      color: #333;
-    }
+.message-box {
+  min-height: 150px;
+  background: var(--lavender-light);
+  border-radius: 15px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: inset 0 4px 10px rgba(0,0,0,0.05);
+  font-weight: 500;
+  color: #333;
+}
 
-    /* Button */
-    .btn {
-      background: var(--lavender);
-      color: var(--white);
-      border: none;
-      border-radius: 30px;
-      padding: 0.75rem 2rem;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
+.btn {
+  background: var(--lavender);
+  color: var(--white);
+  border: none;
+  border-radius: 30px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
 
-    .btn:hover {
-      background: var(--pink);
-      transform: translateY(-2px);
-    }
+.btn:hover {
+  background: var(--pink);
+  transform: translateY(-2px);
+}
 
-    .btn:active {
-      transform: scale(0.97);
-    }
+.btn:active {
+  transform: scale(0.97);
+}
 
-    /* Photo section */
-    .photo-section {
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-    }
+.photo-section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 
-    .photo-placeholder {
-      font-style: italic;
-      color: #777;
-      background: #f9f9f9;
-      border-radius: 12px;
-      padding: 0.75rem;
-      box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
-    }
+.photo-placeholder {
+  font-style: italic;
+  color: #777;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 0.75rem;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
+}
 
-    /* Click counter section */
-    .count-section {
-      margin: 2rem 0;
-    }
+.count-section {
+  margin: 2rem 0;
+}
 
-    .count-placeholder {
-      font-size: 1.1rem;
-      font-weight: 500;
-      background: var(--lavender-light);
-      padding: 0.75rem;
-      border-radius: 12px;
-      display: inline-block;
-      margin-bottom: 0.5rem;
-    }
+.count-placeholder {
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: var(--lavender-light);
+  padding: 0.75rem;
+  border-radius: 12px;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
 
-    .count-text span {
-      font-weight: bold;
-      color: var(--lavender);
-    }
+.count-text span {
+  font-weight: bold;
+  color: var(--lavender);
+}
 
-    .count-hint-section {
-      margin-top: 0.5rem;
-    }
+.count-hint-section {
+  margin-top: 0.5rem;
+}
 
-    .count-hint {
-      font-size: 0.9rem;
-      color: #666;
-      font-style: italic;
-    }
+.count-hint {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
 
-    /* Finale (hidden until triggered) */
-    .finale {
-      margin-top: 2rem;
-      background: var(--lavender-light);
-      border-radius: 15px;
-      padding: 1.5rem;
-      display: none; /* Will show later with JS */
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
+.finale {
+  margin-top: 2rem;
+  background: var(--lavender-light);
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 
-    .finale-text {
-      font-size: 1.6rem;
-      font-weight: bold;
-      color: var(--lavender);
-    }
+.finale-text {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--lavender);
+}
 
-    /* Footer */
-    footer {
-      margin-top: 1.5rem;
-      font-size: 0.85rem;
-      color: #666;
-    }
+footer {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: #666;
+}
 
-    .photo-placeholder {
-      width: 300px;
-      height: 300px;
-      margin: 1rem auto;
-      border-radius: 15px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #eee;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
+.photo-placeholder {
+  width: 300px;
+  height: 300px;
+  margin: 1rem auto;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
 
-    .photo-placeholder img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    /* Make collage behave like a background */
-    /* Collage stays in the background */
-    /* Collage background */
-    .collage {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 0;
-    }
+.collage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
 
-    .collage-img {
-      position: absolute;
-      width: 120px;
-      opacity: 0.7;
-      transition: transform 0.3s ease;
-    }
+.collage-img {
+  position: absolute;
+  width: 120px;
+  opacity: 0.7;
+  transition: all 0.8s ease-in-out;
+}
 
-    
+/* When finale anim starts */
+.collage.finale-anim .collage-img {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
 
-    /* Make sure your content stays above */
-    /* Removed z-index: 10 from here as .container now handles the stacking context */
-    .main-container,
-    .photo-placeholder,
-    #random-msg,
-    .finale,
-    .btn {
-      position: relative;
-      /* z-index: 10; - Removed */
-    }
-    
+/* Fade-out effect */
+.container.fade-out {
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.container.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 1s ease, transform 1s ease;
+  pointer-events: none;
+}
+
+.collage.grid-finale {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-gap: 10px;
+  align-items: center;
+  justify-items: center;
+  padding: 2rem;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.collage.grid-finale .collage-img {
+  position: static; /* reset absolute */
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  opacity: 1;
+  transform: none;
+  transition: all 1s ease-in-out;
+}
+.collage.finale-anim .collage-img {
+  transition: all 1.5s ease-in-out;
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.container.fade-out {
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.main-container,
+.photo-placeholder,
+#random-msg,
+.finale,
+.btn {
+  position: relative;
+  /* z-index: 10; - Removed */
+}
